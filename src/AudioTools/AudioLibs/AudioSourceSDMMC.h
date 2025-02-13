@@ -41,7 +41,8 @@ public:
   virtual void begin() override {
     TRACED();
     if (!is_sd_setup) {
-      if (!SD_MMC.begin("/sdcard", true)) {
+			//if (!SD_MMC.begin("/sdcard", true)) {
+			if (!SD_MMC.begin()) {  // MikeR
         LOGE("SD_MMC.begin failed");
         return;
       }
